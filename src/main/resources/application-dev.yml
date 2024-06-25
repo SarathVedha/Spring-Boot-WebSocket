@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    org:
+      springframework:
+        messaging: TRACE
+        web:
+          socket: TRACE
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+    filter: true
+    operations-sorter: alpha
+    tags-sorter: alpha
+    groups-order: asc
+    layout: BaseLayout # DefaultLayout, StackedLayout, DocExpansion, ListLayout, DeepLinking, DisplayOperationId, DefaultModelsExpandDepth, DefaultModelExpandDepth, DefaultModelRendering, DisplayRequestDuration, DocExpansion, Filter, MaxDisplayedTags, OperationsSorter, ShowExtensions, TagsSorter, UrisSorter
+    display-request-duration: true
+#  show-actuator: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+    env:
+      show-values: always
+    configprops:
+      show-values: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+    os:
+      enabled: true
+    java:
+      enabled: true
+    build:
+      enabled: true
